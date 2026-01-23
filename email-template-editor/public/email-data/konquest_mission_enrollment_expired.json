@@ -1,0 +1,25 @@
+{
+  "id": "konquest_mission_enrollment_expired",
+  "name": "Inscrição em Missão Expirada",
+  "category": "konquest",
+  "subject": "Sua inscrição expirou",
+  "header": {
+    "icon": "event_busy",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Sua inscrição na missão \"{{missionName}}\" expirou. Entre em contato com o administrador se precisar reativar.",
+    "sections": [],
+    "cta": {
+      "text": "Ver Missões Disponíveis",
+      "icon": "arrow_forward",
+      "url": "{{missionsUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

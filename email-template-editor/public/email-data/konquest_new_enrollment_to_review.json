@@ -1,0 +1,25 @@
+{
+  "id": "konquest_new_enrollment_to_review",
+  "name": "Nova Inscrição para Revisar",
+  "category": "konquest",
+  "subject": "Nova inscrição aguardando revisão",
+  "header": {
+    "icon": "rate_review",
+    "iconSize": 48,
+    "title": "Olá, {{managerName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Uma nova inscrição de {{userName}} na missão \"{{missionName}}\" está aguardando sua revisão.",
+    "sections": [],
+    "cta": {
+      "text": "Revisar Inscrição",
+      "icon": "arrow_forward",
+      "url": "{{reviewUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "konquest_live_enrollment_accepted",
+  "name": "Inscrição em Missão Live Aceita",
+  "category": "konquest",
+  "subject": "Sua inscrição foi aceita!",
+  "header": {
+    "icon": "check_circle",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Sua inscrição na missão live \"{{missionName}}\" foi aceita! Prepare-se para participar.",
+    "sections": [],
+    "cta": {
+      "text": "Ver Detalhes",
+      "icon": "videocam",
+      "url": "{{missionUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

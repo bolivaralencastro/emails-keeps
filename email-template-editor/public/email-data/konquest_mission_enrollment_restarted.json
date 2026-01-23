@@ -1,0 +1,25 @@
+{
+  "id": "konquest_mission_enrollment_restarted",
+  "name": "Inscrição em Missão Reiniciada",
+  "category": "konquest",
+  "subject": "Sua inscrição foi reiniciada",
+  "header": {
+    "icon": "restart_alt",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Sua inscrição na missão \"{{missionName}}\" foi reiniciada. Você pode retomar seu progresso.",
+    "sections": [],
+    "cta": {
+      "text": "Continuar Missão",
+      "icon": "arrow_forward",
+      "url": "{{missionUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

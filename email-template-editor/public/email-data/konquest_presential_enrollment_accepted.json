@@ -1,0 +1,25 @@
+{
+  "id": "konquest_presential_enrollment_accepted",
+  "name": "Inscrição Presencial Aceita",
+  "category": "konquest",
+  "subject": "Sua inscrição presencial foi aceita!",
+  "header": {
+    "icon": "check_circle",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Sua inscrição na missão presencial \"{{missionName}}\" foi aceita!",
+    "sections": [],
+    "cta": {
+      "text": "Ver Detalhes",
+      "icon": "groups",
+      "url": "{{missionUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

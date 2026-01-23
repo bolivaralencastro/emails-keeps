@@ -1,0 +1,25 @@
+{
+  "id": "konquest_mission_enrollment_expiring",
+  "name": "Inscrição em Missão Expirando",
+  "category": "konquest",
+  "subject": "Sua inscrição está expirando!",
+  "header": {
+    "icon": "schedule",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Sua inscrição na missão \"{{missionName}}\" está próxima de expirar. Complete as atividades antes do prazo.",
+    "sections": [],
+    "cta": {
+      "text": "Acessar Missão",
+      "icon": "arrow_forward",
+      "url": "{{missionUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

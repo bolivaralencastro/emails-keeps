@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Schema para definição de conteúdo de emails Konquest",
+  "type": "object",
+  "required": ["id", "name", "header", "content"],
+  "properties": {
+    "id": { "type": "string", "description": "Identificador único do email" },
+    "name": { "type": "string", "description": "Nome legível do template" },
+    "category": { "type": "string", "enum": ["analytics", "konquest", "smartzap", "myaccount"] },
+    "subject": { "type": "string", "description": "Assunto do email" },
+    
+    "header": {
+      "type": "object",
+      "properties": {
+        "icon": { "type": "string", "description": "Nome do ícone Material Symbols" },
+        "iconSize": { "type": "number", "default": 48 },
+        "title": { "type": "string" },
+        "subtitle": { "type": ["string", "null"] }
+      }
+    },
+    
+    "content": {
+      "type": "object",
+      "properties": {
+        "intro": { "type": "string", "description": "Texto introdutório" },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["info-card", "list", "alert", "text", "timeline"] },
+              "title": { "type": "string" },
+              "items": { "type": "array" }
+            }
+          }
+        },
+        "cta": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" },
+            "icon": { "type": "string" },
+            "url": { "type": "string" }
+          }
+        },
+        "footer": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" },
+            "hint": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "smartzap_invite",
+  "name": "Convite SmartZap",
+  "category": "smartzap",
+  "subject": "Convite SmartZap",
+  "header": {
+    "icon": "chat",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Você foi convidado para participar do SmartZap. Aceite o convite para começar.",
+    "sections": [],
+    "cta": {
+      "text": "Aceitar Convite",
+      "icon": "check_circle",
+      "url": "{{inviteUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

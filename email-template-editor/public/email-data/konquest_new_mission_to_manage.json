@@ -1,0 +1,25 @@
+{
+  "id": "konquest_new_mission_to_manage",
+  "name": "Nova Missão para Gerenciar",
+  "category": "konquest",
+  "subject": "Nova missão atribuída a você",
+  "header": {
+    "icon": "admin_panel_settings",
+    "iconSize": 48,
+    "title": "Olá, {{managerName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Uma nova missão \"{{missionName}}\" foi atribuída para você gerenciar.",
+    "sections": [],
+    "cta": {
+      "text": "Gerenciar Missão",
+      "icon": "arrow_forward",
+      "url": "{{manageUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

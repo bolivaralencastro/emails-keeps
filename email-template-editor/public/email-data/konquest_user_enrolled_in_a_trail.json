@@ -1,0 +1,25 @@
+{
+  "id": "konquest_user_enrolled_in_a_trail",
+  "name": "Inscrição em Trilha",
+  "category": "konquest",
+  "subject": "Você foi inscrito em uma trilha!",
+  "header": {
+    "icon": "route",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Você foi inscrito(a) na trilha \"{{trailName}}\". Comece sua jornada de aprendizado!",
+    "sections": [],
+    "cta": {
+      "text": "Acessar Trilha",
+      "icon": "arrow_forward",
+      "url": "{{trailUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

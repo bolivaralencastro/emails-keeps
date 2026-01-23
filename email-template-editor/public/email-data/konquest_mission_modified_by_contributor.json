@@ -1,0 +1,25 @@
+{
+  "id": "konquest_mission_modified_by_contributor",
+  "name": "Missão Modificada",
+  "category": "konquest",
+  "subject": "Uma missão foi modificada",
+  "header": {
+    "icon": "edit",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "A missão \"{{missionName}}\" foi modificada por um contribuidor. Confira as atualizações.",
+    "sections": [],
+    "cta": {
+      "text": "Ver Alterações",
+      "icon": "arrow_forward",
+      "url": "{{missionUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

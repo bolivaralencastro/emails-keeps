@@ -1,0 +1,25 @@
+{
+  "id": "konquest_enrolled_in_group_missions",
+  "name": "Inscrição em Missões em Grupo",
+  "category": "konquest",
+  "subject": "Você foi inscrito em novas missões!",
+  "header": {
+    "icon": "groups",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Você foi inscrito(a) em novas missões em grupo. Confira os detalhes abaixo e comece sua jornada de aprendizado.",
+    "sections": [],
+    "cta": {
+      "text": "Acessar Missões",
+      "icon": "arrow_forward",
+      "url": "{{missionsUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

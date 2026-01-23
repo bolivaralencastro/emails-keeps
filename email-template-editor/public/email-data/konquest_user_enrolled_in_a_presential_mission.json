@@ -1,0 +1,25 @@
+{
+  "id": "konquest_user_enrolled_in_a_presential_mission",
+  "name": "Inscrição em Missão Presencial",
+  "category": "konquest",
+  "subject": "Você foi inscrito em uma missão presencial!",
+  "header": {
+    "icon": "groups",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Você foi inscrito(a) na missão presencial \"{{missionName}}\". Fique atento ao local e horário!",
+    "sections": [],
+    "cta": {
+      "text": "Ver Detalhes",
+      "icon": "groups",
+      "url": "{{missionUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

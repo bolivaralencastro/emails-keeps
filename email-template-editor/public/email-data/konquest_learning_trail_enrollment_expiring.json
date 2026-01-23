@@ -1,0 +1,25 @@
+{
+  "id": "konquest_learning_trail_enrollment_expiring",
+  "name": "Trilha Expirando em Breve",
+  "category": "konquest",
+  "subject": "Sua inscrição na trilha está expirando!",
+  "header": {
+    "icon": "schedule",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Sua inscrição na trilha \"{{trailName}}\" está próxima de expirar. Termine as missões restantes antes do prazo.",
+    "sections": [],
+    "cta": {
+      "text": "Ver Trilha",
+      "icon": "arrow_forward",
+      "url": "{{trailUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

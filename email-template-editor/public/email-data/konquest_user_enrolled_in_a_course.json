@@ -1,0 +1,25 @@
+{
+  "id": "konquest_user_enrolled_in_a_course",
+  "name": "Inscrição em Curso",
+  "category": "konquest",
+  "subject": "Você foi inscrito em um curso!",
+  "header": {
+    "icon": "menu_book",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Você foi inscrito(a) no curso \"{{courseName}}\". Comece seu aprendizado agora!",
+    "sections": [],
+    "cta": {
+      "text": "Acessar Curso",
+      "icon": "arrow_forward",
+      "url": "{{courseUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "konquest_invite",
+  "name": "Convite para a Plataforma",
+  "category": "konquest",
+  "subject": "Bem-vindo(a) à plataforma!",
+  "header": {
+    "icon": "mail",
+    "iconSize": 48,
+    "title": "Bem-vindo a Bordo, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Você está sendo convidado(a) para acessar a plataforma de aprendizagem da {{companyName}}! Com esse convite, você terá acesso a vários conteúdos e também poderá compartilhar seus conhecimentos e habilidades com outras pessoas.",
+    "sections": [],
+    "cta": {
+      "text": "Criar Minha Conta",
+      "icon": "person_add",
+      "url": "{{inviteUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

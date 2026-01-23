@@ -1,0 +1,25 @@
+{
+  "id": "konquest_presential_mission_starts_soon",
+  "name": "Missão Presencial Começa em Breve",
+  "category": "konquest",
+  "subject": "Missão presencial começa em breve!",
+  "header": {
+    "icon": "schedule",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "A missão presencial \"{{missionName}}\" começa em {{startTime}}. Não se esqueça do local: {{location}}.",
+    "sections": [],
+    "cta": {
+      "text": "Ver Detalhes",
+      "icon": "groups",
+      "url": "{{missionUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

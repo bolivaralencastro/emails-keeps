@@ -1,0 +1,25 @@
+{
+  "id": "konquest_live_mission_starts_soon",
+  "name": "Missão Live Começa em Breve",
+  "category": "konquest",
+  "subject": "Sua missão live começa em breve!",
+  "header": {
+    "icon": "schedule",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "A missão live \"{{missionName}}\" começa em {{startTime}}. Não se esqueça!",
+    "sections": [],
+    "cta": {
+      "text": "Acessar Missão",
+      "icon": "videocam",
+      "url": "{{missionUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

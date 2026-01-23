@@ -1,0 +1,25 @@
+{
+  "id": "konquest_mission_trail_disabled",
+  "name": "Trilha/Missão Desabilitada",
+  "category": "konquest",
+  "subject": "Uma trilha foi desabilitada",
+  "header": {
+    "icon": "block",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "A trilha \"{{trailName}}\" foi desabilitada e não está mais disponível.",
+    "sections": [],
+    "cta": {
+      "text": "Ver Trilhas Disponíveis",
+      "icon": "arrow_forward",
+      "url": "{{trailsUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

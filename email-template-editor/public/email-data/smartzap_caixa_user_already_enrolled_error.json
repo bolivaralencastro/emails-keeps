@@ -1,0 +1,25 @@
+{
+  "id": "smartzap_caixa_user_already_enrolled_error",
+  "name": "Erro: Usuário Já Inscrito",
+  "category": "smartzap",
+  "subject": "Erro na inscrição SmartZap",
+  "header": {
+    "icon": "error",
+    "iconSize": 48,
+    "title": "Ops! Algo deu errado",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "O usuário {{userName}} já está inscrito no SmartZap. Não é possível realizar nova inscrição.",
+    "sections": [],
+    "cta": {
+      "text": "Acessar SmartZap",
+      "icon": "arrow_forward",
+      "url": "{{smartzapUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

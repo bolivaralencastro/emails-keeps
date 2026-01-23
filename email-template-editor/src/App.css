@@ -1,0 +1,184 @@
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.app-sidebar {
+  flex-shrink: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--color-bg-primary);
+  border-right: 1px solid var(--color-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-sidebar.collapsed {
+  width: 0 !important;
+  min-width: 0 !important;
+  padding: 0;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.app-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+.app-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+.app-sidebar.left {
+  width: 340px;
+  border-right: 1px solid var(--color-border);
+}
+
+.app-sidebar.right {
+  width: 300px;
+  border-left: 1px solid var(--color-border);
+  border-right: none;
+}
+
+.app-main {
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+  position: relative;
+}
+
+/* Botão de Toggle das Sidebars */
+.sidebar-toggle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--color-primary);
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-xl);
+  color: var(--color-primary);
+}
+
+.sidebar-toggle:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  transform: translate(-50%, -50%) scale(1.15);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+.sidebar-toggle:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Modo de Comparação */
+.comparison-view {
+  display: flex;
+  height: 100%;
+  gap: 1px;
+  background: var(--color-border);
+}
+
+.comparison-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-secondary);
+  position: relative;
+}
+
+.comparison-label {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: white;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 100;
+  box-shadow: var(--shadow-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.comparison-divider {
+  width: 3px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1400px) {
+  .app-sidebar.left {
+    width: 300px;
+  }
+  
+  .app-sidebar.right {
+    width: 260px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app {
+    flex-direction: column;
+  }
+  
+  .app-sidebar {
+    width: 100% !important;
+    height: auto;
+    max-height: 35vh;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .app-sidebar.collapsed {
+    max-height: 0;
+    min-height: 0;
+  }
+  
+  .app-main {
+    flex: 1;
+    min-height: 300px;
+  }
+  
+  .comparison-view {
+    flex-direction: column;
+  }
+  
+  .comparison-divider {
+    width: 100%;
+    height: 3px;
+  }
+  
+  .sidebar-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+}

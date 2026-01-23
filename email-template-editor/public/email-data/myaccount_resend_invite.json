@@ -1,0 +1,25 @@
+{
+  "id": "myaccount_resend_invite",
+  "name": "Reenvio de Convite",
+  "category": "myaccount",
+  "subject": "Convite para acessar a plataforma",
+  "header": {
+    "icon": "account_circle",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Estamos reenviando seu convite para acessar a plataforma. Clique no botão abaixo para criar sua conta.",
+    "sections": [],
+    "cta": {
+      "text": "Criar Conta",
+      "icon": "person_add",
+      "url": "{{inviteUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

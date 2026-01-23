@@ -1,0 +1,25 @@
+{
+  "id": "konquest_new_missions",
+  "name": "Novas Missões Disponíveis",
+  "category": "konquest",
+  "subject": "Novas missões disponíveis para você!",
+  "header": {
+    "icon": "new_releases",
+    "iconSize": 48,
+    "title": "Olá, {{userName}}!",
+    "subtitle": null
+  },
+  "content": {
+    "intro": "Novas missões foram adicionadas à plataforma. Confira e comece sua jornada!",
+    "sections": [],
+    "cta": {
+      "text": "Ver Missões",
+      "icon": "arrow_forward",
+      "url": "{{missionsUrl}}"
+    },
+    "footer": {
+      "text": "Acesse a plataforma para mais detalhes.",
+      "hint": "Em caso de dúvidas, entre em contato com o suporte."
+    }
+  }
+}

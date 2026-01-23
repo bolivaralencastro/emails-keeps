@@ -163,13 +163,6 @@ export default function VariablesInfoDialog({ isOpen, onClose }) {
             </div>
           ))}
         </div>
-
-        <div className="dialog-footer">
-          <p className="footer-note">
-            💡 <strong>Nota:</strong> Essas variáveis são populadas pelo backend antes do envio dos emails. 
-            No editor, você pode visualizar e testar diferentes valores através do painel de Design System.
-          </p>
-        </div>
       </div>
     </div>
   );

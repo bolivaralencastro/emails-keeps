@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { AlertCircle, MousePointer, Maximize, Minimize } from 'lucide-react';
+import { AlertCircle, MousePointer, Maximize, Minimize, Monitor, Smartphone } from 'lucide-react';
 import { EmailTemplate } from './EmailTemplate';
 import { applyDesignTokens } from '../utils/tokenInjector';
 import './TemplatePreview.css';
 import './EmailTemplate.css';
 
-export default function TemplatePreview({ template, designSystem, viewMode, templateVersion = 'original', onToggleFullscreen, isFullscreen }) {
+export default function TemplatePreview({ template, designSystem, viewMode, templateVersion = 'original', onToggleFullscreen, isFullscreen, onViewModeChange }) {
   const [emailData, setEmailData] = useState(null);
   const [rawHtml, setRawHtml] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -70,15 +70,35 @@ export default function TemplatePreview({ template, designSystem, viewMode, temp
 
   return (
     <div className={`template-preview ${isFullscreen ? 'fullscreen-mode' : ''}`}>
-      {onToggleFullscreen && (
-        <button 
-          className="fullscreen-btn"
-          onClick={onToggleFullscreen}
-          title={isFullscreen ? 'Sair da tela cheia' : 'Tela cheia'}
-        >
-          {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
-        </button>
-      )}
+      <div className="preview-toolbar">
+        {onViewModeChange && (
+          <div className="view-mode-buttons">
+            <button 
+              className={`view-mode-btn ${viewMode === 'desktop' ? 'active' : ''}`}
+              onClick={() => onViewModeChange('desktop')}
+              title="Visualização Desktop"
+            >
+              <Monitor size={18} />
+            </button>
+            <button 
+              className={`view-mode-btn ${viewMode === 'mobile' ? 'active' : ''}`}
+              onClick={() => onViewModeChange('mobile')}
+              title="Visualização Mobile"
+            >
+              <Smartphone size={18} />
+            </button>
+          </div>
+        )}
+        {onToggleFullscreen && (
+          <button 
+            className="fullscreen-btn"
+            onClick={onToggleFullscreen}
+            title={isFullscreen ? 'Sair da tela cheia' : 'Tela cheia'}
+          >
+            {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
+          </button>
+        )}
+      </div>
       <div className="preview-content">
         {loading ? (
           <div className="preview-loading">Carregando...</div>

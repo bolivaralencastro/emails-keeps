@@ -137,6 +137,7 @@ function App() {
                 templateVersion="original"
                 onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
                 isFullscreen={fullscreenMode}
+                onViewModeChange={setViewMode}
               />
             </div>
             <div className="comparison-divider"></div>
@@ -149,6 +150,7 @@ function App() {
                 templateVersion="refatorado"
                 onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
                 isFullscreen={fullscreenMode}
+                onViewModeChange={setViewMode}
               />
             </div>
           </div>
@@ -160,6 +162,7 @@ function App() {
             templateVersion={templateVersion}
             onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
             isFullscreen={fullscreenMode}
+            onViewModeChange={setViewMode}
           />
         )}
       </div>

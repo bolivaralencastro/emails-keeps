@@ -69,7 +69,7 @@ export default function TemplatePreview({ template, designSystem, viewMode, temp
   };
 
   return (
-    <div className="template-preview">
+    <div className={`template-preview ${isFullscreen ? 'fullscreen-mode' : ''}`}>
       {onToggleFullscreen && (
         <button 
           className="fullscreen-btn"

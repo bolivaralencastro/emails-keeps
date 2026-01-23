@@ -43,6 +43,21 @@
   align-items: flex-start;
 }
 
+.template-preview.fullscreen-mode .preview-content {
+  padding: 0;
+  align-items: stretch;
+}
+
+.template-preview.fullscreen-mode .preview-frame,
+.template-preview.fullscreen-mode .preview-frame-react {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 .preview-content::-webkit-scrollbar {
   width: 8px;
 }

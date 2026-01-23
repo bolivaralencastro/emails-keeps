@@ -12,13 +12,31 @@ export function EmailTemplate({ emailData, designSystem }) {
       <div className="email-container">
         <EmailHeader header={emailData.header} logoUrl={logoUrl} />
         <EmailContent content={emailData.content} primaryColor={primaryColor} />
-        <EmailFooter primaryColor={primaryColor} />
       </div>
       
-      {/* Keeps Branding Footer */}
-      <div className="keeps-branding">
-        <p className="keeps-text">Desenvolvido por Keeps</p>
-        <p className="keeps-location">Florianópolis | SC | Brasil</p>
+      {/* Help Section */}
+      <div style={{ marginTop: '32px', padding: '24px 16px', textAlign: 'center' }}>
+        <p style={{ fontWeight: 700, fontSize: '12px', color: '#4b5563', margin: '0 0 12px 0' }}>
+          Precisa de Ajuda?
+        </p>
+        <div style={{ marginBottom: '24px' }}>
+          <a href="{{whatsappUrl}}" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', margin: '0 12px', textDecoration: 'none', color: '#6b7280', fontSize: '12px', fontWeight: 500 }}>
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>
+              chat
+            </span>
+            WhatsApp
+          </a>
+          <a href="mailto:{{supportEmail}}" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', margin: '0 12px', textDecoration: 'none', color: '#6b7280', fontSize: '12px', fontWeight: 500 }}>
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>
+              mail
+            </span>
+            Email
+          </a>
+        </div>
+        <p style={{ fontSize: '11px', color: '#9ca3af', margin: 0, lineHeight: 1.6 }}>
+          Desenvolvido por Keeps<br />
+          Florianópolis | SC | Brasil
+        </p>
       </div>
     </div>
   );
@@ -142,29 +160,6 @@ function Alert({ section }) {
         </span>
       )}
       {section.content}
-    </div>
-  );
-}
-
-function EmailFooter({ primaryColor }) {
-  return (
-    <div className="email-footer">
-      <p className="footer-company">{'{{companyName}}'}</p>
-      <p className="footer-address">{'{{companyAddress}}'}</p>
-      <div style={{ marginTop: '16px' }}>
-        <a href="{{whatsappUrl}}" className="footer-social">
-          <span className="material-symbols-outlined" style={{ fontSize: '18px', verticalAlign: 'middle', marginRight: '4px' }}>
-            chat
-          </span>
-          WhatsApp
-        </a>
-        <a href="mailto:{{supportEmail}}" className="footer-social" style={{ marginLeft: '16px' }}>
-          <span className="material-symbols-outlined" style={{ fontSize: '18px', verticalAlign: 'middle', marginRight: '4px' }}>
-            mail
-          </span>
-          Email
-        </a>
-      </div>
     </div>
   );
 }

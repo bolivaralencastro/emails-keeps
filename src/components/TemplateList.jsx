@@ -1,7 +1,7 @@
 import { templateList, templateCategories, getTemplateName } from '../utils/templateList';
 import { 
   Info, ChevronDown, ChevronRight, BarChart3, UserPlus, Clock, Calendar, 
-  Settings, Target, MessageCircle, User 
+  Settings, Target, MessageCircle, User, Mail 
 } from 'lucide-react';
 import { useState } from 'react';
 import './TemplateList.css';

@@ -32,6 +32,11 @@ function App() {
         console.error('Error loading saved design system:', error);
       }
     }
+    
+    // Set first template as default
+    if (templateList.length > 0) {
+      setSelectedTemplate(templateList[0]);
+    }
   }, []);
 
   // Save design system to localStorage when it changes

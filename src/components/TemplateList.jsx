@@ -1,5 +1,5 @@
 import { templateList, getTemplateName } from '../utils/templateList';
-import { Monitor, Smartphone, File, Sparkles, GitCompare, Eye, Mail } from 'lucide-react';
+import { Monitor, Smartphone, File, Sparkles, GitCompare, Eye, Mail, Info } from 'lucide-react';
 import './TemplateList.css';
 
 export default function TemplateList({ 
@@ -10,27 +10,37 @@ export default function TemplateList({
   templateVersion,
   onTemplateVersionChange,
   comparisonMode,
-  onComparisonModeChange
+  onComparisonModeChange,
+  onInfoClick
 }) {
   return (
     <div className="template-list">
       <div className="template-header">
         <h3>Templates ({templateList.length})</h3>
-        <div className="view-mode-toggle">
-          <button
-            className={viewMode === 'desktop' ? 'active' : ''}
-            onClick={() => onViewModeChange('desktop')}
-            title="Desktop"
+        <div className="header-actions">
+          <button 
+            className="info-icon-btn"
+            onClick={onInfoClick}
+            title="Ver propriedades dinâmicas"
           >
-            <Monitor size={18} />
+            <Info size={18} />
           </button>
-          <button
-            className={viewMode === 'mobile' ? 'active' : ''}
-            onClick={() => onViewModeChange('mobile')}
-            title="Mobile"
-          >
-            <Smartphone size={18} />
-          </button>
+          <div className="view-mode-toggle">
+            <button
+              className={viewMode === 'desktop' ? 'active' : ''}
+              onClick={() => onViewModeChange('desktop')}
+              title="Desktop"
+            >
+              <Monitor size={18} />
+            </button>
+            <button
+              className={viewMode === 'mobile' ? 'active' : ''}
+              onClick={() => onViewModeChange('mobile')}
+              title="Mobile"
+            >
+              <Smartphone size={18} />
+            </button>
+          </div>
         </div>
       </div>
       

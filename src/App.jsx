@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { PanelLeftClose, PanelRightClose } from 'lucide-react';
+import AppHeader from './components/AppHeader';
 import DesignSystemEditor from './components/DesignSystemEditor';
 import TemplateList from './components/TemplateList';
 import TemplatePreview from './components/TemplatePreview';
+import VariablesInfoDialog from './components/VariablesInfoDialog';
 import { defaultDesignSystem } from './utils/tokenInjector';
 import './App.css';
 
@@ -15,6 +17,7 @@ function App() {
   const [templateVersion, setTemplateVersion] = useState('original'); // 'original' ou 'refatorado'
   const [comparisonMode, setComparisonMode] = useState(false); // modo de comparação lado a lado
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false); // controle de collapse das sidebars
+  const [infoDialogOpen, setInfoDialogOpen] = useState(false);
 
   // Load design system from localStorage on mount
   useEffect(() => {
@@ -58,6 +61,11 @@ function App() {
 
   return (
     <div className="app">
+      <VariablesInfoDialog 
+        isOpen={infoDialogOpen} 
+        onClose={() => setInfoDialogOpen(false)} 
+      />
+      
       <div className={`app-sidebar left ${sidebarCollapsed ? 'collapsed' : ''}`}>
         <DesignSystemEditor
           designSystem={designSystem}
@@ -132,6 +140,7 @@ function App() {
           onTemplateVersionChange={setTemplateVersion}
           comparisonMode={comparisonMode}
           onComparisonModeChange={setComparisonMode}
+          onInfoClick={() => setInfoDialogOpen(true)}
         />
       </div>
     </div>

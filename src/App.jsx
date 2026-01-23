@@ -6,6 +6,7 @@ import TemplateList from './components/TemplateList';
 import TemplatePreview from './components/TemplatePreview';
 import VariablesInfoDialog from './components/VariablesInfoDialog';
 import { defaultDesignSystem } from './utils/tokenInjector';
+import { templateList } from './utils/templateList';
 import './App.css';
 
 const STORAGE_KEY = 'email-design-system';
@@ -18,6 +19,7 @@ function App() {
   const [comparisonMode, setComparisonMode] = useState(false); // modo de comparação lado a lado
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false); // controle de collapse das sidebars
   const [infoDialogOpen, setInfoDialogOpen] = useState(false);
+  const [fullscreenMode, setFullscreenMode] = useState(false);
 
   // Load design system from localStorage on mount
   useEffect(() => {
@@ -59,14 +61,35 @@ function App() {
     }
   };
 
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        if (!selectedTemplate) return;
+        
+        const currentIndex = templateList.indexOf(selectedTemplate);
+        if (currentIndex === -1) return;
+
+        if (e.key === 'ArrowLeft' && currentIndex > 0) {
+          setSelectedTemplate(templateList[currentIndex - 1]);
+        } else if (e.key === 'ArrowRight' && currentIndex < templateList.length - 1) {
+          setSelectedTemplate(templateList[currentIndex + 1]);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedTemplate]);
+
   return (
-    <div className="app">
+    <div className={`app ${fullscreenMode ? 'fullscreen' : ''}`}>
       <VariablesInfoDialog 
         isOpen={infoDialogOpen} 
         onClose={() => setInfoDialogOpen(false)} 
       />
       
-      <div className={`app-sidebar left ${sidebarCollapsed ? 'collapsed' : ''}`}>
+      <div className={`app-sidebar left ${sidebarCollapsed || fullscreenMode ? 'collapsed' : ''}`}>
         <DesignSystemEditor
           designSystem={designSystem}
           onChange={setDesignSystem}
@@ -78,7 +101,7 @@ function App() {
       
       <div className="app-main">
         {/* Botão de Toggle das Sidebars - só visível no modo de comparação */}
-        {comparisonMode && (
+        {comparisonMode && !fullscreenMode && (
           <button 
             className="sidebar-toggle"
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
@@ -107,6 +130,8 @@ function App() {
                 designSystem={designSystem}
                 viewMode={viewMode}
                 templateVersion="original"
+                onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
+                isFullscreen={fullscreenMode}
               />
             </div>
             <div className="comparison-divider"></div>
@@ -117,6 +142,8 @@ function App() {
                 designSystem={designSystem}
                 viewMode={viewMode}
                 templateVersion="refatorado"
+                onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
+                isFullscreen={fullscreenMode}
               />
             </div>
           </div>
@@ -126,11 +153,13 @@ function App() {
             designSystem={designSystem}
             viewMode={viewMode}
             templateVersion={templateVersion}
+            onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
+            isFullscreen={fullscreenMode}
           />
         )}
       </div>
       
-      <div className={`app-sidebar right ${sidebarCollapsed ? 'collapsed' : ''}`}>
+      <div className={`app-sidebar right ${sidebarCollapsed || fullscreenMode ? 'collapsed' : ''}`}>
         <TemplateList
           selectedTemplate={selectedTemplate}
           onSelectTemplate={setSelectedTemplate}

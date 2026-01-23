@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { AlertCircle, MousePointer } from 'lucide-react';
+import { AlertCircle, MousePointer, Maximize, Minimize } from 'lucide-react';
 import { EmailTemplate } from './EmailTemplate';
 import { applyDesignTokens } from '../utils/tokenInjector';
 import './TemplatePreview.css';
 import './EmailTemplate.css';
 
-export default function TemplatePreview({ template, designSystem, viewMode, templateVersion = 'original' }) {
+export default function TemplatePreview({ template, designSystem, viewMode, templateVersion = 'original', onToggleFullscreen, isFullscreen }) {
   const [emailData, setEmailData] = useState(null);
   const [rawHtml, setRawHtml] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -70,6 +70,15 @@ export default function TemplatePreview({ template, designSystem, viewMode, temp
 
   return (
     <div className="template-preview">
+      {onToggleFullscreen && (
+        <button 
+          className="fullscreen-btn"
+          onClick={onToggleFullscreen}
+          title={isFullscreen ? 'Sair da tela cheia' : 'Tela cheia'}
+        >
+          {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
+        </button>
+      )}
       <div className="preview-content">
         {loading ? (
           <div className="preview-loading">Carregando...</div>

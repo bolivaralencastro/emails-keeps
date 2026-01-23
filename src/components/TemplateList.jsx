@@ -1,5 +1,6 @@
-import { templateList, getTemplateName } from '../utils/templateList';
-import { Monitor, Smartphone, File, Sparkles, GitCompare, Eye, Mail, Info } from 'lucide-react';
+import { templateList, templateCategories, getTemplateName } from '../utils/templateList';
+import { Monitor, Smartphone, File, Sparkles, GitCompare, Eye, Mail, Info, ChevronDown, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 import './TemplateList.css';
 
 export default function TemplateList({ 
@@ -13,6 +14,16 @@ export default function TemplateList({
   onComparisonModeChange,
   onInfoClick
 }) {
+  const [expandedCategories, setExpandedCategories] = useState(
+    templateCategories.reduce((acc, cat) => ({ ...acc, [cat.id]: true }), {})
+  );
+
+  const toggleCategory = (categoryId) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [categoryId]: !prev[categoryId]
+    }));
+  };
   return (
     <div className="template-list">
       <div className="template-header">
@@ -90,17 +101,36 @@ export default function TemplateList({
         </button>
       </div>
       
-      <div className="template-grid">
-        {templateList.map((template) => (
-          <div
-            key={template}
-            className={`template-item ${selectedTemplate === template ? 'active' : ''}`}
-            onClick={() => onSelectTemplate(template)}
-          >
-            <div className="template-icon">
-              <Mail size={24} />
-            </div>
-            <div className="template-name">{getTemplateName(template)}</div>
+      <div className="template-clusters">
+        {templateCategories.map((category) => (
+          <div key={category.id} className="template-cluster">
+            <button 
+              className="cluster-header"
+              onClick={() => toggleCategory(category.id)}
+            >
+              <span className="cluster-icon">
+                {expandedCategories[category.id] ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+              </span>
+              <span className="cluster-name">{category.name}</span>
+              <span className="cluster-count">{category.templates.length}</span>
+            </button>
+            
+            {expandedCategories[category.id] && (
+              <div className="template-grid">
+                {category.templates.map((template) => (
+                  <div
+                    key={template}
+                    className={`template-item ${selectedTemplate === template ? 'active' : ''}`}
+                    onClick={() => onSelectTemplate(template)}
+                  >
+                    <div className="template-icon">
+                      <Mail size={20} />
+                    </div>
+                    <div className="template-name">{getTemplateName(template)}</div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>

@@ -1,9 +1,10 @@
-import { X } from 'lucide-react';
+import { X, User, Building2, Target, Route, FileText, Calendar, Link2, Mail, Key } from 'lucide-react';
 import './VariablesInfoDialog.css';
 
 const variablesInfo = [
   {
-    title: '👤 Dados de Usuário',
+    title: 'Dados de Usuário',
+    icon: User,
     count: 8,
     items: [
       { key: 'user_name', desc: 'Nome do usuário (ex: "João Silva")' },
@@ -17,7 +18,8 @@ const variablesInfo = [
     ]
   },
   {
-    title: '🏢 Empresa/Workspace',
+    title: 'Empresa/Workspace',
+    icon: Building2,
     count: 11,
     items: [
       { key: 'company', desc: 'Nome da empresa' },
@@ -31,7 +33,8 @@ const variablesInfo = [
     ]
   },
   {
-    title: '🎯 Missão/Curso',
+    title: 'Missão/Curso',
+    icon: Target,
     count: 23,
     items: [
       { key: 'mission_name', desc: 'Nome da missão/curso' },
@@ -50,7 +53,8 @@ const variablesInfo = [
     ]
   },
   {
-    title: '🛤️ Trilha de Aprendizado',
+    title: 'Trilha de Aprendizado',
+    icon: Route,
     count: 4,
     items: [
       { key: 'learning_trail_name', desc: 'Nome da trilha' },
@@ -60,7 +64,8 @@ const variablesInfo = [
     ]
   },
   {
-    title: '📊 Relatório',
+    title: 'Relatório',
+    icon: FileText,
     count: 2,
     items: [
       { key: 'report_name', desc: 'Nome do relatório' },
@@ -68,7 +73,8 @@ const variablesInfo = [
     ]
   },
   {
-    title: '📅 Datas e Prazos',
+    title: 'Datas e Prazos',
+    icon: Calendar,
     count: 7,
     items: [
       { key: 'enrollment_goal_date', desc: 'Data limite de inscrição' },
@@ -81,7 +87,8 @@ const variablesInfo = [
     ]
   },
   {
-    title: '🔗 Links e URLs',
+    title: 'Links e URLs',
+    icon: Link2,
     count: 3,
     items: [
       { key: 'app_web_link', desc: 'Link do app web' },
@@ -90,7 +97,8 @@ const variablesInfo = [
     ]
   },
   {
-    title: '📧 Suporte e Contato',
+    title: 'Suporte e Contato',
+    icon: Mail,
     count: 4,
     items: [
       { key: 'supportEmail', desc: 'Email de suporte' },
@@ -100,7 +108,8 @@ const variablesInfo = [
     ]
   },
   {
-    title: '🔑 Acesso e Autenticação',
+    title: 'Acesso e Autenticação',
+    icon: Key,
     count: 3,
     items: [
       { key: 'login_url', desc: 'URL de login' },
@@ -120,7 +129,7 @@ export default function VariablesInfoDialog({ isOpen, onClose }) {
       <div className="dialog-content" onClick={(e) => e.stopPropagation()}>
         <div className="dialog-header">
           <div>
-            <h2>📋 Propriedades Dinâmicas dos Templates</h2>
+            <h2>Propriedades Dinâmicas dos Templates</h2>
             <p className="dialog-subtitle">
               Variáveis disponíveis para customização dos emails
             </p>
@@ -131,22 +140,28 @@ export default function VariablesInfoDialog({ isOpen, onClose }) {
         </div>
 
         <div className="dialog-body">
-          {variablesInfo.map((category, idx) => (
-            <div key={idx} className="variable-category">
-              <div className="category-header">
-                <h3>{category.title}</h3>
-                <span className="category-count">{category.count} variáveis</span>
-              </div>
-              <div className="variable-list">
-                {category.items.map((item, itemIdx) => (
-                  <div key={itemIdx} className="variable-item">
-                    <code className="variable-key">{item.key}</code>
-                    <span className="variable-desc">{item.desc}</span>
+          {variablesInfo.map((category, idx) => {
+            const IconComponent = category.icon;
+            return (
+              <div key={idx} className="variable-category">
+                <div className="category-header">
+                  <div className="category-title-wrapper">
+                    {IconComponent && <IconComponent size={18} className="category-icon" />}
+                    <h3>{category.title}</h3>
                   </div>
-                ))}
+                  <span className="category-count">{category.count} variáveis</span>
+                </div>
+                <div className="variable-list">
+                  {category.items.map((item, itemIdx) => (
+                    <div key={itemIdx} className="variable-item">
+                      <code className="variable-key">{item.key}</code>
+                      <span className="variable-desc">{item.desc}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

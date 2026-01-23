@@ -1,16 +1,16 @@
 export const templateCategories = [
   {
     id: 'analytics',
-    name: '📊 Analytics',
-    icon: '📊',
+    name: 'Analytics',
+    icon: 'BarChart3',
     templates: [
       'analytics_new_report'
     ]
   },
   {
     id: 'konquest_enrollment',
-    name: '📝 Konquest - Matrículas',
-    icon: '📝',
+    name: 'Konquest - Matrículas',
+    icon: 'UserPlus',
     templates: [
       'konquest_enrolled_in_group_missions',
       'konquest_user_enrolled_in_a_course',
@@ -24,8 +24,8 @@ export const templateCategories = [
   },
   {
     id: 'konquest_expiration',
-    name: '⏰ Konquest - Prazos e Expirações',
-    icon: '⏰',
+    name: 'Konquest - Prazos e Expirações',
+    icon: 'Clock',
     templates: [
       'konquest_learning_trail_enrollment_expiring',
       'konquest_mission_enrollment_expired',
@@ -35,8 +35,8 @@ export const templateCategories = [
   },
   {
     id: 'konquest_events',
-    name: '📅 Konquest - Eventos',
-    icon: '📅',
+    name: 'Konquest - Eventos',
+    icon: 'Calendar',
     templates: [
       'konquest_live_mission_starts_soon',
       'konquest_presential_mission_starts_soon',
@@ -44,8 +44,8 @@ export const templateCategories = [
   },
   {
     id: 'konquest_management',
-    name: '⚙️ Konquest - Gestão',
-    icon: '⚙️',
+    name: 'Konquest - Gestão',
+    icon: 'Settings',
     templates: [
       'konquest_new_enrollment_to_review',
       'konquest_new_mission_to_manage',
@@ -56,8 +56,8 @@ export const templateCategories = [
   },
   {
     id: 'konquest_general',
-    name: '🎯 Konquest - Geral',
-    icon: '🎯',
+    name: 'Konquest - Geral',
+    icon: 'Target',
     templates: [
       'konquest_invite',
       'konquest_onboarding',
@@ -66,8 +66,8 @@ export const templateCategories = [
   },
   {
     id: 'smartzap',
-    name: '💬 SmartZap',
-    icon: '💬',
+    name: 'SmartZap',
+    icon: 'MessageCircle',
     templates: [
       'smartzap_invite',
       'smartzap_caixa_user_already_enrolled_error',
@@ -76,8 +76,8 @@ export const templateCategories = [
   },
   {
     id: 'myaccount',
-    name: '👤 MyAccount',
-    icon: '👤',
+    name: 'MyAccount',
+    icon: 'User',
     templates: [
       'myaccount_resend_invite'
     ]

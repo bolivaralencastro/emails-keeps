@@ -207,15 +207,26 @@
   background: var(--color-bg-hover);
 }
 
-.cluster-icon {
+.cluster-chevron {
   color: var(--color-text-tertiary);
   display: flex;
   align-items: center;
   transition: var(--transition);
 }
 
-.cluster-header:hover .cluster-icon {
+.cluster-icon-main {
   color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.cluster-header:hover .cluster-chevron {
+  color: var(--color-primary);
+}
+
+.cluster-header:hover .cluster-icon-main {
+  transform: scale(1.1);
 }
 
 .cluster-name {

@@ -9,12 +9,13 @@
 
 export function renderEmailTemplate(emailData, designSystem) {
   const { primaryColor, logoUrl } = designSystem;
+  const baseUrl = import.meta.env.BASE_URL || '/';
   
   // Gerar HTML do header
-  const headerHTML = renderHeader(emailData.header, logoUrl);
+  const headerHTML = renderHeader(emailData.header, logoUrl, baseUrl);
   
   // Gerar HTML do conteúdo
-  const contentHTML = renderContent(emailData.content);
+  const contentHTML = renderContent(emailData.content, baseUrl);
   
   // Montar template completo
   return `<!DOCTYPE html>
@@ -318,7 +319,7 @@ export function renderEmailTemplate(emailData, designSystem) {
         <table class="email-container" cellpadding="0" cellspacing="0" border="0">
           ${headerHTML}
           ${contentHTML}
-          ${renderEmailFooter()}
+          ${renderEmailFooter(baseUrl)}
         </table>
       </td>
     </tr>
@@ -327,14 +328,14 @@ export function renderEmailTemplate(emailData, designSystem) {
 </html>`;
 }
 
-function renderHeader(header, logoUrl) {
+function renderHeader(header, logoUrl, baseUrl) {
   return `
     <tr>
       <td class="email-header">
         ${logoUrl ? `<img src="${logoUrl}" class="email-logo" alt="Logo">` : ''}
         ${header.icon ? `
           <div class="email-icon">
-            <img src="/icons/${header.icon}.png" width="${header.iconSize || 48}" height="${header.iconSize || 48}" alt="${header.icon}">
+            <img src="${baseUrl}icons/${header.icon}.png" width="${header.iconSize || 48}" height="${header.iconSize || 48}" alt="${header.icon}">
           </div>
         ` : ''}
         <h1 class="email-title">${header.title}</h1>
@@ -344,7 +345,7 @@ function renderHeader(header, logoUrl) {
   `;
 }
 
-function renderContent(content) {
+function renderContent(content, baseUrl) {
   let html = '<tr><td class="email-content">';
   
   // Intro
@@ -363,13 +364,13 @@ function renderContent(content) {
       
       switch (section.type) {
         case 'info-card':
-          html += renderInfoCard(section.items);
+          html += renderInfoCard(section.items, baseUrl);
           break;
         case 'list':
-          html += renderList(section.items);
+          html += renderList(section.items, baseUrl);
           break;
         case 'alert':
-          html += renderAlert(section);
+          html += renderAlert(section, baseUrl);
           break;
         case 'text':
           html += `<p>${section.content}</p>`;
@@ -387,7 +388,7 @@ function renderContent(content) {
     html += `
       <div class="cta-wrapper">
         <a href="${content.cta.url}" class="btn-primary">
-          ${content.cta.icon ? `<img src="/icons/${content.cta.icon}.png" width="18" height="18" style="vertical-align: middle; margin-right: 8px;" alt="${content.cta.icon}">` : ''}
+          ${content.cta.icon ? `<img src="${baseUrl}icons/${content.cta.icon}.png" width="18" height="18" style="vertical-align: middle; margin-right: 8px;" alt="${content.cta.icon}">` : ''}
           ${content.cta.text}
         </a>
       </div>
@@ -410,7 +411,7 @@ function renderContent(content) {
   return html;
 }
 
-function renderInfoCard(items) {
+function renderInfoCard(items, baseUrl) {
   let html = '<div class="info-card">';
   
   items.forEach(item => {
@@ -418,7 +419,7 @@ function renderInfoCard(items) {
       <div class="info-item">
         ${item.icon ? `
           <div class="info-item-icon">
-            <img src="/icons/${item.icon}.png" width="20" height="20" alt="${item.icon}">
+            <img src="${baseUrl}icons/${item.icon}.png" width="20" height="20" alt="${item.icon}">
           </div>
         ` : ''}
         <div class="info-item-content">
@@ -433,13 +434,13 @@ function renderInfoCard(items) {
   return html;
 }
 
-function renderList(items) {
+function renderList(items, baseUrl) {
   let html = '<ul class="content-list">';
   
   items.forEach(item => {
     html += `
       <li class="content-list-item">
-        ${item.icon ? `<img src="/icons/${item.icon}.png" width="20" height="20" style="margin-right: 12px;" alt="${item.icon}">` : ''}
+        ${item.icon ? `<img src="${baseUrl}icons/${item.icon}.png" width="20" height="20" style="margin-right: 12px;" alt="${item.icon}">` : ''}
         <span>${item.text}</span>
       </li>
     `;
@@ -449,17 +450,17 @@ function renderList(items) {
   return html;
 }
 
-function renderAlert(section) {
+function renderAlert(section, baseUrl) {
   const alertClass = section.variant ? `alert-${section.variant}` : 'alert-info';
   return `
     <div class="alert ${alertClass}">
-      ${section.icon ? `<img src="/icons/${section.icon}.png" width="20" height="20" style="margin-right: 12px; vertical-align: middle;" alt="${section.icon}">` : ''}
+      ${section.icon ? `<img src="${baseUrl}icons/${section.icon}.png" width="20" height="20" style="margin-right: 12px; vertical-align: middle;" alt="${section.icon}">` : ''}
       ${section.content}
     </div>
   `;
 }
 
-function renderEmailFooter() {
+function renderEmailFooter(baseUrl) {
   return `
     <tr>
       <td class="email-footer">
@@ -467,11 +468,11 @@ function renderEmailFooter() {
         <p class="footer-address">{{companyAddress}}</p>
         <div style="margin-top: 16px;">
           <a href="{{whatsappUrl}}" class="footer-social">
-            <img src="/icons/chat.png" width="18" height="18" style="vertical-align: middle; margin-right: 4px;" alt="WhatsApp">
+            <img src="${baseUrl}icons/chat.png" width="18" height="18" style="vertical-align: middle; margin-right: 4px;" alt="WhatsApp">
             WhatsApp
           </a>
           <a href="mailto:{{supportEmail}}" class="footer-social">
-            <img src="/icons/mail.png" width="18" height="18" style="vertical-align: middle; margin-right: 4px;" alt="Email">
+            <img src="${baseUrl}icons/mail.png" width="18" height="18" style="vertical-align: middle; margin-right: 4px;" alt="Email">
             Email
           </a>
         </div>

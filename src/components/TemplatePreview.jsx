@@ -33,7 +33,8 @@ export default function TemplatePreview({ template, designSystem, viewMode, temp
       if (templateVersion === 'refatorado') {
         // Carregar JSON do email refatorado - renderiza como React component
         const cacheBuster = `?t=${Date.now()}`;
-        const response = await fetch(`/email-data/${template}.json${cacheBuster}`);
+        const baseUrl = import.meta.env.BASE_URL || '/';
+        const response = await fetch(`${baseUrl}email-data/${template}.json${cacheBuster}`);
         
         if (!response.ok) {
           throw new Error(`Email data não encontrado: ${template}.json`);
@@ -45,7 +46,8 @@ export default function TemplatePreview({ template, designSystem, viewMode, temp
       } else {
         // Template original - carregar HTML direto e usar iframe (legado)
         const cacheBuster = `?t=${Date.now()}`;
-        const response = await fetch(`/templates/${template}.html${cacheBuster}`);
+        const baseUrl = import.meta.env.BASE_URL || '/';
+        const response = await fetch(`${baseUrl}templates/${template}.html${cacheBuster}`);
         
         if (!response.ok) {
           throw new Error(`Template não encontrado: ${template}.html`);

@@ -18,36 +18,46 @@ Sistema de gerenciamento de templates de email com design system customizável, 
 - **Lucide Icons** (UI do app)
 - **Material Symbols** (ícones dos emails)
 - **TinyColor2** (geração de paletas de cores)
-- **CSS Modules** (estilização)
+
+## 🛠️ Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/bolivaralencastro/emails-keeps.git
+cd emails-keeps
+
+# Instale dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+```
 
 ## 📂 Estrutura do Projeto
 
 ```
 emails-keeps/
-├── email-template-editor/          # App React principal
-│   ├── public/
-│   │   ├── templates/              # Templates HTML originais (27)
-│   │   ├── templates-refatorados/  # Templates HTML refatorados (legado)
-│   │   ├── email-data/             # JSONs com conteúdo dos emails (27)
-│   │   └── icons/                  # Ícones PNG para emails
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── DesignSystemEditor.jsx    # Editor de cores/logo
-│   │   │   ├── TemplateList.jsx          # Lista de templates
-│   │   │   ├── TemplatePreview.jsx       # Preview com iframe/React
-│   │   │   └── EmailTemplate.jsx         # Componente de email
-│   │   ├── utils/
-│   │   │   ├── emailRenderer.js          # Renderiza JSON → HTML (legado)
-│   │   │   ├── tokenInjector.js          # Aplica design tokens
-│   │   │   ├── templateList.js           # Lista de templates
-│   │   │   └── templateVariables.js      # Variáveis dinâmicas
-│   │   ├── App.jsx                       # Componente principal
-│   │   └── main.jsx                      # Entry point
-│   └── package.json
-├── templates/                      # Templates originais extraídos do CSV
-├── DESIGN_SYSTEM.md               # Documentação do design system
-├── GUIA_IMPLEMENTACAO.md          # Guia de implementação
-└── RESUMO_EXECUTIVO.md            # Resumo executivo do projeto
+├── public/
+│   ├── templates/              # Templates HTML originais (27)
+│   ├── templates-refatorados/  # Templates HTML refatorados (legado)
+│   ├── email-data/             # JSONs com conteúdo dos emails (27)
+│   └── icons/                  # Ícones PNG para compatibilidade email
+├── src/
+│   ├── components/
+│   │   ├── DesignSystemEditor.jsx    # Editor de cores/logo
+│   │   ├── TemplateList.jsx          # Lista de templates
+│   │   ├── TemplatePreview.jsx       # Preview com iframe/React
+│   │   └── EmailTemplate.jsx         # Componente de email
+│   ├── utils/
+│   │   ├── tokenInjector.js          # Aplica design tokens
+│   │   ├── templateList.js           # Lista de templates
+│   │   └── templateVariables.js      # Variáveis dinâmicas
+│   ├── App.jsx                       # Componente principal
+│   └── main.jsx                      # Entry point
+└── package.json
 ```
 
 ## 🎯 Arquitetura
@@ -64,41 +74,24 @@ emails-keeps/
 - **PNG Icons**: Compatível com email clients
 - **Design variável**: Mantém estrutura original
 
-## 🛠️ Instalação
-
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/emails-keeps.git
-cd emails-keeps/email-template-editor
-
-# Instale dependências
-npm install
-
-# Inicie o servidor de desenvolvimento
-npm run dev
-
-# Build para produção
-npm run build
-```
-
 ## 📖 Como Usar
 
-1. **Abra o app**: http://localhost:5174
+1. **Abra o app**: `npm run dev` → http://localhost:5173
 2. **Selecione um template** na lista à direita
 3. **Escolha a versão**: Original ou Refatorado
 4. **Customize o design system**:
-   - Altere a cor primária
+   - Altere a cor primária (padrão: #8430ED)
    - Adicione URL do logo
    - Export/Import configurações
 5. **Compare versões**: Ative o modo comparação
-6. **Export**: Baixe as configurações em JSON
+6. **Preview responsivo**: Alterne entre desktop e mobile
 
 ## 🎨 Design System
 
 O design system segue princípios modernos de UI/UX:
 
 - **8-Point Grid System**: Espaçamentos múltiplos de 8px
-- **Cor Primária**: Personalizável com 10 variações automáticas
+- **Cor Primária**: #8430ED (Roxo Konquest) com 10 variações automáticas
 - **Cores Fixas**: 
   - Background: `#f3f5f8` (cinza claro)
   - Container: `#ffffff` (branco)
@@ -157,9 +150,9 @@ O design system segue princípios modernos de UI/UX:
 
 ### Modificar Estilos
 
-- **Estilos globais do email**: `src/components/EmailTemplate.css`
+- **Estilos do email**: `src/components/EmailTemplate.css`
 - **Estilos do app**: `src/index.css`
-- **Componentes específicos**: `*.css` correspondente
+- **Componentes**: cada componente tem seu `.css`
 
 ## 📦 Build e Deploy
 

@@ -37,10 +37,3 @@ yarn-error.log*
 # Temporary files
 /tmp/
 *.tmp
-
-# Scripts de refatoração temporários
-refactor-conservative.mjs
-refactor-aggressive.mjs
-convert-to-png-icons.cjs
-convert-to-png-icons.js
-generate-icons.html

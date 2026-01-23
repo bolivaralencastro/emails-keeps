@@ -5,7 +5,7 @@ import { applyDesignTokens } from '../utils/tokenInjector';
 import './TemplatePreview.css';
 import './EmailTemplate.css';
 
-export default function TemplatePreview({ template, designSystem, viewMode, templateVersion = 'original', onToggleFullscreen, isFullscreen, onViewModeChange, onTemplateVersionChange, comparisonMode, onComparisonModeChange }) {
+export default function TemplatePreview({ template, designSystem, viewMode, templateVersion = 'original', onToggleFullscreen, isFullscreen, onViewModeChange, onTemplateVersionChange, comparisonMode, onComparisonModeChange, hideToolbar = false }) {
   const [emailData, setEmailData] = useState(null);
   const [rawHtml, setRawHtml] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -101,70 +101,72 @@ export default function TemplatePreview({ template, designSystem, viewMode, temp
         )}
       </div>
 
-      <div className="preview-toolbar-bottom">
-        {onViewModeChange && (
-          <>
-            <button 
-              className={`toolbar-btn ${viewMode === 'desktop' ? 'active' : ''}`}
-              onClick={() => onViewModeChange('desktop')}
-              title="Visualização Desktop"
-            >
-              <Monitor size={18} />
-            </button>
-            <button 
-              className={`toolbar-btn ${viewMode === 'mobile' ? 'active' : ''}`}
-              onClick={() => onViewModeChange('mobile')}
-              title="Visualização Mobile"
-            >
-              <Smartphone size={18} />
-            </button>
-            <div className="toolbar-divider"></div>
-          </>
-        )}
-        
-        {onTemplateVersionChange && !comparisonMode && (
-          <>
-            <button 
-              className={`toolbar-btn ${templateVersion === 'original' ? 'active' : ''}`}
-              onClick={() => onTemplateVersionChange('original')}
-              title="Template Original"
-            >
-              <FileCode size={18} />
-            </button>
-            <button 
-              className={`toolbar-btn ${templateVersion === 'refatorado' ? 'active' : ''}`}
-              onClick={() => onTemplateVersionChange('refatorado')}
-              title="Template Refatorado"
-            >
-              <FileCode size={18} />
-            </button>
-            <div className="toolbar-divider"></div>
-          </>
-        )}
+      {!hideToolbar && (
+        <div className="preview-toolbar-bottom">
+          {onViewModeChange && (
+            <>
+              <button 
+                className={`toolbar-btn ${viewMode === 'desktop' ? 'active' : ''}`}
+                onClick={() => onViewModeChange('desktop')}
+                title="Visualização Desktop"
+              >
+                <Monitor size={18} />
+              </button>
+              <button 
+                className={`toolbar-btn ${viewMode === 'mobile' ? 'active' : ''}`}
+                onClick={() => onViewModeChange('mobile')}
+                title="Visualização Mobile"
+              >
+                <Smartphone size={18} />
+              </button>
+              <div className="toolbar-divider"></div>
+            </>
+          )}
+          
+          {onTemplateVersionChange && !comparisonMode && (
+            <>
+              <button 
+                className={`toolbar-btn ${templateVersion === 'original' ? 'active' : ''}`}
+                onClick={() => onTemplateVersionChange('original')}
+                title="Template Original"
+              >
+                <FileCode size={18} />
+              </button>
+              <button 
+                className={`toolbar-btn ${templateVersion === 'refatorado' ? 'active' : ''}`}
+                onClick={() => onTemplateVersionChange('refatorado')}
+                title="Template Refatorado"
+              >
+                <FileCode size={18} />
+              </button>
+              <div className="toolbar-divider"></div>
+            </>
+          )}
 
-        {onComparisonModeChange && (
-          <>
-            <button 
-              className={`toolbar-btn ${comparisonMode ? 'active' : ''}`}
-              onClick={() => onComparisonModeChange(!comparisonMode)}
-              title={comparisonMode ? 'Modo Normal' : 'Modo Comparação'}
-            >
-              <Split size={18} />
-            </button>
-            <div className="toolbar-divider"></div>
-          </>
-        )}
+          {onComparisonModeChange && (
+            <>
+              <button 
+                className={`toolbar-btn ${comparisonMode ? 'active' : ''}`}
+                onClick={() => onComparisonModeChange(!comparisonMode)}
+                title={comparisonMode ? 'Modo Normal' : 'Modo Comparação'}
+              >
+                <Split size={18} />
+              </button>
+              <div className="toolbar-divider"></div>
+            </>
+          )}
 
-        {onToggleFullscreen && (
-          <button 
-            className="toolbar-btn"
-            onClick={onToggleFullscreen}
-            title={isFullscreen ? 'Sair da tela cheia' : 'Tela cheia'}
-          >
-            {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
-          </button>
-        )}
-      </div>
+          {onToggleFullscreen && (
+            <button 
+              className="toolbar-btn"
+              onClick={onToggleFullscreen}
+              title={isFullscreen ? 'Sair da tela cheia' : 'Tela cheia'}
+            >
+              {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

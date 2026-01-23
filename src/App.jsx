@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { PanelLeftClose, PanelRightClose } from 'lucide-react';
+import { Monitor, Smartphone, Split, Maximize, Minimize } from 'lucide-react';
 import AppHeader from './components/AppHeader';
 import DesignSystemEditor from './components/DesignSystemEditor';
 import TemplateList from './components/TemplateList';
@@ -105,27 +105,6 @@ function App() {
       </div>
       
       <div className="app-main">
-        {/* Botão de Toggle das Sidebars - só visível no modo de comparação */}
-        {comparisonMode && !fullscreenMode && (
-          <button 
-            className="sidebar-toggle"
-            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-            title={sidebarCollapsed ? 'Expandir painéis' : 'Colapsar painéis'}
-          >
-            {sidebarCollapsed ? (
-              <>
-                <PanelRightClose size={20} />
-                <PanelLeftClose size={20} />
-              </>
-            ) : (
-              <>
-                <PanelLeftClose size={20} />
-                <PanelRightClose size={20} />
-              </>
-            )}
-          </button>
-        )}
-        
         {comparisonMode ? (
           <div className="comparison-view">
             <div className="comparison-panel">
@@ -135,12 +114,8 @@ function App() {
                 designSystem={designSystem}
                 viewMode={viewMode}
                 templateVersion="original"
-                onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
                 isFullscreen={fullscreenMode}
-                onViewModeChange={setViewMode}
-                onTemplateVersionChange={setTemplateVersion}
-                comparisonMode={comparisonMode}
-                onComparisonModeChange={setComparisonMode}
+                hideToolbar={true}
               />
             </div>
             <div className="comparison-divider"></div>
@@ -151,13 +126,41 @@ function App() {
                 designSystem={designSystem}
                 viewMode={viewMode}
                 templateVersion="refatorado"
-                onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
                 isFullscreen={fullscreenMode}
-                onViewModeChange={setViewMode}
-                onTemplateVersionChange={setTemplateVersion}
-                comparisonMode={comparisonMode}
-                onComparisonModeChange={setComparisonMode}
+                hideToolbar={true}
               />
+            </div>
+            <div className="preview-toolbar-bottom">
+              <button 
+                className={`toolbar-btn ${viewMode === 'desktop' ? 'active' : ''}`}
+                onClick={() => setViewMode('desktop')}
+                title="Visualização Desktop"
+              >
+                <Monitor size={18} />
+              </button>
+              <button 
+                className={`toolbar-btn ${viewMode === 'mobile' ? 'active' : ''}`}
+                onClick={() => setViewMode('mobile')}
+                title="Visualização Mobile"
+              >
+                <Smartphone size={18} />
+              </button>
+              <div className="toolbar-divider"></div>
+              <button 
+                className="toolbar-btn active"
+                onClick={() => setComparisonMode(false)}
+                title="Modo Normal"
+              >
+                <Split size={18} />
+              </button>
+              <div className="toolbar-divider"></div>
+              <button 
+                className="toolbar-btn"
+                onClick={() => setFullscreenMode(!fullscreenMode)}
+                title={fullscreenMode ? 'Sair da tela cheia' : 'Tela cheia'}
+              >
+                {fullscreenMode ? <Minimize size={18} /> : <Maximize size={18} />}
+              </button>
             </div>
           </div>
         ) : (

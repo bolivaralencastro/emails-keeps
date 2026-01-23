@@ -319,8 +319,8 @@ export function renderEmailTemplate(emailData, designSystem) {
         <table class="email-container" cellpadding="0" cellspacing="0" border="0">
           ${headerHTML}
           ${contentHTML}
-          ${renderEmailFooter(baseUrl)}
         </table>
+        ${renderEmailFooter(baseUrl)}
       </td>
     </tr>
   </table>
@@ -462,26 +462,24 @@ function renderAlert(section, baseUrl) {
 
 function renderEmailFooter(baseUrl) {
   return `
-    <tr>
-      <td class="email-footer">
-        <p style="font-weight: 700; font-size: 12px; color: #4b5563; margin: 0 0 8px 0; text-align: center;">
-          Precisa de Ajuda?
-        </p>
-        <div style="margin-bottom: 16px; text-align: center;">
-          <a href="{{whatsappUrl}}" class="footer-social" style="display: inline-flex; align-items: center; gap: 4px; margin: 0 8px; text-decoration: none; color: #6b7280; font-size: 11px;">
-            <img src="${baseUrl}icons/chat.png" width="16" height="16" style="vertical-align: middle;" alt="WhatsApp">
-            WhatsApp
-          </a>
-          <a href="mailto:{{supportEmail}}" class="footer-social" style="display: inline-flex; align-items: center; gap: 4px; margin: 0 8px; text-decoration: none; color: #6b7280; font-size: 11px;">
-            <img src="${baseUrl}icons/mail.png" width="16" height="16" style="vertical-align: middle;" alt="Email">
-            Email
-          </a>
-        </div>
-        <p style="font-size: 11px; color: #9ca3af; margin: 0; text-align: center; line-height: 1.5;">
-          Desenvolvido por Keeps<br>
-          Florianópolis | SC | Brasil
-        </p>
-      </td>
-    </tr>
+    <div style="margin-top: 32px; padding: 24px 16px; text-align: center;">
+      <p style="font-weight: 700; font-size: 12px; color: #4b5563; margin: 0 0 12px 0;">
+        Precisa de Ajuda?
+      </p>
+      <div style="margin-bottom: 24px;">
+        <a href="{{whatsappUrl}}" style="display: inline-flex; align-items: center; gap: 6px; margin: 0 12px; text-decoration: none; color: #6b7280; font-size: 12px; font-weight: 500;">
+          <img src="${baseUrl}icons/chat.png" width="16" height="16" style="vertical-align: middle;" alt="WhatsApp">
+          WhatsApp
+        </a>
+        <a href="mailto:{{supportEmail}}" style="display: inline-flex; align-items: center; gap: 6px; margin: 0 12px; text-decoration: none; color: #6b7280; font-size: 12px; font-weight: 500;">
+          <img src="${baseUrl}icons/mail.png" width="16" height="16" style="vertical-align: middle;" alt="Email">
+          Email
+        </a>
+      </div>
+      <p style="font-size: 11px; color: #9ca3af; margin: 0; line-height: 1.6;">
+        Desenvolvido por Keeps<br>
+        Florianópolis | SC | Brasil
+      </p>
+    </div>
   `;
 }

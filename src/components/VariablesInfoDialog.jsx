@@ -130,21 +130,6 @@ export default function VariablesInfoDialog({ isOpen, onClose }) {
           </button>
         </div>
 
-        <div className="dialog-stats">
-          <div className="stat-item">
-            <span className="stat-value">{totalVariables}</span>
-            <span className="stat-label">Variáveis</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-value">{variablesInfo.length}</span>
-            <span className="stat-label">Categorias</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-value">27</span>
-            <span className="stat-label">Templates</span>
-          </div>
-        </div>
-
         <div className="dialog-body">
           {variablesInfo.map((category, idx) => (
             <div key={idx} className="variable-category">

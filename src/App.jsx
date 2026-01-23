@@ -138,6 +138,9 @@ function App() {
                 onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
                 isFullscreen={fullscreenMode}
                 onViewModeChange={setViewMode}
+                onTemplateVersionChange={setTemplateVersion}
+                comparisonMode={comparisonMode}
+                onComparisonModeChange={setComparisonMode}
               />
             </div>
             <div className="comparison-divider"></div>
@@ -151,6 +154,9 @@ function App() {
                 onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
                 isFullscreen={fullscreenMode}
                 onViewModeChange={setViewMode}
+                onTemplateVersionChange={setTemplateVersion}
+                comparisonMode={comparisonMode}
+                onComparisonModeChange={setComparisonMode}
               />
             </div>
           </div>
@@ -163,6 +169,9 @@ function App() {
             onToggleFullscreen={() => setFullscreenMode(!fullscreenMode)}
             isFullscreen={fullscreenMode}
             onViewModeChange={setViewMode}
+            onTemplateVersionChange={setTemplateVersion}
+            comparisonMode={comparisonMode}
+            onComparisonModeChange={setComparisonMode}
           />
         )}
       </div>

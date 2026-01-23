@@ -1,7 +1,6 @@
 import { templateList, templateCategories, getTemplateName } from '../utils/templateList';
 import { 
-  Monitor, Smartphone, File, Sparkles, GitCompare, Eye, Mail, Info, 
-  ChevronDown, ChevronRight, BarChart3, UserPlus, Clock, Calendar, 
+  Info, ChevronDown, ChevronRight, BarChart3, UserPlus, Clock, Calendar, 
   Settings, Target, MessageCircle, User 
 } from 'lucide-react';
 import { useState } from 'react';
@@ -51,69 +50,7 @@ export default function TemplateList({
           >
             <Info size={18} />
           </button>
-          <div className="view-mode-toggle">
-            <button
-              className={viewMode === 'desktop' ? 'active' : ''}
-              onClick={() => onViewModeChange('desktop')}
-              title="Desktop"
-            >
-              <Monitor size={18} />
-            </button>
-            <button
-              className={viewMode === 'mobile' ? 'active' : ''}
-              onClick={() => onViewModeChange('mobile')}
-              title="Mobile"
-            >
-              <Smartphone size={18} />
-            </button>
-          </div>
         </div>
-      </div>
-      
-      {/* Toggle de Versão do Template */}
-      <div className="template-version-control">
-        <div className="version-toggle-group">
-          <button
-            className={`version-btn ${templateVersion === 'original' && !comparisonMode ? 'active' : ''}`}
-            onClick={() => {
-              onTemplateVersionChange('original');
-              onComparisonModeChange(false);
-            }}
-            disabled={comparisonMode}
-          >
-            <File size={16} />
-            <span>Original</span>
-          </button>
-          <button
-            className={`version-btn ${templateVersion === 'refatorado' && !comparisonMode ? 'active' : ''}`}
-            onClick={() => {
-              onTemplateVersionChange('refatorado');
-              onComparisonModeChange(false);
-            }}
-            disabled={comparisonMode}
-          >
-            <Sparkles size={16} />
-            <span>Refatorado</span>
-          </button>
-        </div>
-        
-        <button
-          className={`comparison-btn ${comparisonMode ? 'active' : ''}`}
-          onClick={() => onComparisonModeChange(!comparisonMode)}
-          title="Comparar lado a lado"
-        >
-          {comparisonMode ? (
-            <>
-              <GitCompare size={18} />
-              <span>Comparação Ativa</span>
-            </>
-          ) : (
-            <>
-              <Eye size={18} />
-              <span>Comparar</span>
-            </>
-          )}
-        </button>
       </div>
       
       <div className="template-clusters">

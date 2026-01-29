@@ -11,7 +11,34 @@
   },
   "content": {
     "intro": "Sua inscrição na missão \"{{missionName}}\" expirou. Entre em contato com o administrador se precisar reativar.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes do curso",
+        "items": [
+          {
+            "icon": "menu_book",
+            "label": "Curso",
+            "value": "Curso de Captação de Imóveis QuintoAndar"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Início em",
+            "value": "16/09/2025"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Expirou em",
+            "value": "21/01/2026"
+          },
+          {
+            "icon": "warning",
+            "label": "Status",
+            "value": "Expirou ontem"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Ver Missões Disponíveis",
       "icon": "arrow_forward",

@@ -3,14 +3,18 @@
  * 
  * Renderiza templates de email como componentes React
  */
+import { keepsSupportContacts } from '../utils/supportContacts';
 
 export function EmailTemplate({ emailData, designSystem }) {
-  const { primaryColor, logoUrl } = designSystem;
+  const { primaryColor, logoUrl, headerIconsEnabled, supportContactsMode, useCustomSupportContacts, variables } = designSystem;
+  const useCustomSupport = useCustomSupportContacts ?? supportContactsMode === 'custom';
+  const supportEmail = useCustomSupport ? variables?.supportEmail : keepsSupportContacts.supportEmail;
+  const whatsappUrl = useCustomSupport ? variables?.whatsappUrl : keepsSupportContacts.whatsappUrl;
 
   return (
     <div className="email-wrapper">
       <div className="email-container">
-        <EmailHeader header={emailData.header} logoUrl={logoUrl} />
+        <EmailHeader header={emailData.header} logoUrl={logoUrl} headerIconsEnabled={headerIconsEnabled} />
         <EmailContent content={emailData.content} primaryColor={primaryColor} />
       </div>
       
@@ -20,33 +24,29 @@ export function EmailTemplate({ emailData, designSystem }) {
           Precisa de Ajuda?
         </p>
         <div style={{ marginBottom: '24px' }}>
-          <a href="{{whatsappUrl}}" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', margin: '0 12px', textDecoration: 'none', color: '#6b7280', fontSize: '12px', fontWeight: 500 }}>
+          <a href={whatsappUrl} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', margin: '0 12px', textDecoration: 'none', color: '#6b7280', fontSize: '12px', fontWeight: 500 }}>
             <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>
               chat
             </span>
             WhatsApp
           </a>
-          <a href="mailto:{{supportEmail}}" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', margin: '0 12px', textDecoration: 'none', color: '#6b7280', fontSize: '12px', fontWeight: 500 }}>
+          <a href={`mailto:${supportEmail}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', margin: '0 12px', textDecoration: 'none', color: '#6b7280', fontSize: '12px', fontWeight: 500 }}>
             <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>
               mail
             </span>
             Email
           </a>
         </div>
-        <p style={{ fontSize: '11px', color: '#9ca3af', margin: 0, lineHeight: 1.6 }}>
-          Desenvolvido por Keeps<br />
-          Florianópolis | SC | Brasil
-        </p>
       </div>
     </div>
   );
 }
 
-function EmailHeader({ header, logoUrl }) {
+function EmailHeader({ header, logoUrl, headerIconsEnabled }) {
   return (
     <div className="email-header">
       {logoUrl && <img src={logoUrl} className="email-logo" alt="Logo" />}
-      {header.icon && (
+      {header.icon && headerIconsEnabled && (
         <div className="email-icon">
           <span className="material-symbols-outlined" style={{ fontSize: `${header.iconSize || 48}px` }}>
             {header.icon}

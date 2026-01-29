@@ -7,12 +7,17 @@
  * 3. Template base padronizado
  */
 
+import { keepsSupportContacts } from './supportContacts';
+
 export function renderEmailTemplate(emailData, designSystem) {
-  const { primaryColor, logoUrl } = designSystem;
+  const { primaryColor, logoUrl, headerIconsEnabled, supportContactsMode, useCustomSupportContacts, variables } = designSystem;
+  const useCustomSupport = useCustomSupportContacts ?? supportContactsMode === 'custom';
+  const supportEmail = useCustomSupport ? variables?.supportEmail : keepsSupportContacts.supportEmail;
+  const whatsappUrl = useCustomSupport ? variables?.whatsappUrl : keepsSupportContacts.whatsappUrl;
   const baseUrl = import.meta.env.BASE_URL || '/';
   
   // Gerar HTML do header
-  const headerHTML = renderHeader(emailData.header, logoUrl, baseUrl);
+  const headerHTML = renderHeader(emailData.header, logoUrl, baseUrl, headerIconsEnabled);
   
   // Gerar HTML do conteúdo
   const contentHTML = renderContent(emailData.content, baseUrl);
@@ -320,7 +325,7 @@ export function renderEmailTemplate(emailData, designSystem) {
           ${headerHTML}
           ${contentHTML}
         </table>
-        ${renderEmailFooter(baseUrl)}
+        ${renderEmailFooter(baseUrl, supportEmail, whatsappUrl)}
       </td>
     </tr>
   </table>
@@ -328,12 +333,12 @@ export function renderEmailTemplate(emailData, designSystem) {
 </html>`;
 }
 
-function renderHeader(header, logoUrl, baseUrl) {
+function renderHeader(header, logoUrl, baseUrl, headerIconsEnabled) {
   return `
     <tr>
       <td class="email-header">
         ${logoUrl ? `<img src="${logoUrl}" class="email-logo" alt="Logo">` : ''}
-        ${header.icon ? `
+        ${header.icon && headerIconsEnabled ? `
           <div class="email-icon">
             <img src="${baseUrl}icons/${header.icon}.png" width="${header.iconSize || 48}" height="${header.iconSize || 48}" alt="${header.icon}">
           </div>
@@ -460,26 +465,22 @@ function renderAlert(section, baseUrl) {
   `;
 }
 
-function renderEmailFooter(baseUrl) {
+function renderEmailFooter(baseUrl, supportEmail, whatsappUrl) {
   return `
     <div style="margin-top: 32px; padding: 24px 16px; text-align: center;">
       <p style="font-weight: 700; font-size: 12px; color: #4b5563; margin: 0 0 12px 0;">
         Precisa de Ajuda?
       </p>
       <div style="margin-bottom: 24px;">
-        <a href="{{whatsappUrl}}" style="display: inline-flex; align-items: center; gap: 6px; margin: 0 12px; text-decoration: none; color: #6b7280; font-size: 12px; font-weight: 500;">
+        <a href="${whatsappUrl}" style="display: inline-flex; align-items: center; gap: 6px; margin: 0 12px; text-decoration: none; color: #6b7280; font-size: 12px; font-weight: 500;">
           <img src="${baseUrl}icons/chat.png" width="16" height="16" style="vertical-align: middle;" alt="WhatsApp">
           WhatsApp
         </a>
-        <a href="mailto:{{supportEmail}}" style="display: inline-flex; align-items: center; gap: 6px; margin: 0 12px; text-decoration: none; color: #6b7280; font-size: 12px; font-weight: 500;">
+        <a href="mailto:${supportEmail}" style="display: inline-flex; align-items: center; gap: 6px; margin: 0 12px; text-decoration: none; color: #6b7280; font-size: 12px; font-weight: 500;">
           <img src="${baseUrl}icons/mail.png" width="16" height="16" style="vertical-align: middle;" alt="Email">
           Email
         </a>
       </div>
-      <p style="font-size: 11px; color: #9ca3af; margin: 0; line-height: 1.6;">
-        Desenvolvido por Keeps<br>
-        Florianópolis | SC | Brasil
-      </p>
     </div>
   `;
 }

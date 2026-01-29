@@ -11,7 +11,26 @@
   },
   "content": {
     "intro": "Novas missões foram adicionadas à plataforma. Confira e comece sua jornada!",
-    "sections": [],
+    "sections": [
+      {
+        "type": "list",
+        "title": "Cursos sugeridos",
+        "items": [
+          {
+            "icon": "menu_book",
+            "text": "Fundamentos do Design Instrucional — Abrir"
+          },
+          {
+            "icon": "menu_book",
+            "text": "Planejamento Avançado de SEO: da Estratégia ao Operacional — Abrir"
+          },
+          {
+            "icon": "menu_book",
+            "text": "Estratégia em Mídias Sociais: Do básico ao avançado — Abrir"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Ver Missões",
       "icon": "arrow_forward",

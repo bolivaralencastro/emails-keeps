@@ -11,7 +11,24 @@
   },
   "content": {
     "intro": "Estamos reenviando seu convite para acessar a plataforma. Clique no botão abaixo para criar sua conta.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Credenciais de acesso",
+        "items": [
+          {
+            "icon": "person",
+            "label": "Usuário",
+            "value": "isabelly.reducino@adimax.com.br"
+          },
+          {
+            "icon": "key",
+            "label": "Senha",
+            "value": "Utilize sua senha atual. Caso não lembre, clique no link para redefinir."
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Criar Conta",
       "icon": "person_add",

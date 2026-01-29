@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { Palette, Image, ChevronDown, ChevronRight, Download, Upload, RotateCcw } from 'lucide-react';
 import { templateVariables } from '../utils/templateVariables';
+import { keepsSupportContacts } from '../utils/supportContacts';
 import './DesignSystemEditor.css';
 
 export default function DesignSystemEditor({ designSystem, onChange, onExport, onImport, onReset }) {
@@ -134,6 +135,59 @@ export default function DesignSystemEditor({ designSystem, onChange, onExport, o
                   </div>
                 )}
               </div>
+
+              {/* Header Icons */}
+              <div className="form-group">
+                <label>Icones no header</label>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <input
+                    type="checkbox"
+                    checked={!!designSystem.headerIconsEnabled}
+                    onChange={(e) => handleInputChange('headerIconsEnabled', e.target.checked)}
+                  />
+                  Exibir icones no header dos emails novos
+                </label>
+                <p className="field-hint">
+                  Desative para remover o icone do header nos templates refatorados.
+                </p>
+              </div>
+
+              {/* Support Contacts */}
+              <div className="form-group">
+                <label>Contato de suporte</label>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                  <input
+                    type="checkbox"
+                    checked={!!designSystem.useCustomSupportContacts}
+                    onChange={(e) => handleInputChange('useCustomSupportContacts', e.target.checked)}
+                  />
+                  Usar suporte proprio
+                </label>
+
+                {designSystem.useCustomSupportContacts && (
+                  <>
+                    <label style={{ marginTop: '8px' }}>Email de suporte</label>
+                    <input
+                      type="text"
+                      value={designSystem.variables?.supportEmail || ''}
+                      onChange={(e) => handleVariableChange('supportEmail', e.target.value)}
+                      placeholder={keepsSupportContacts.supportEmail}
+                    />
+
+                    <label style={{ marginTop: '12px' }}>WhatsApp de suporte (URL)</label>
+                    <input
+                      type="text"
+                      value={designSystem.variables?.whatsappUrl || ''}
+                      onChange={(e) => handleVariableChange('whatsappUrl', e.target.value)}
+                      placeholder={keepsSupportContacts.whatsappUrl}
+                    />
+                  </>
+                )}
+
+                <p className="field-hint">
+                  Quando desativado, os emails usam o suporte padrao da Keeps.
+                </p>
+              </div>
             </div>
           )}
         </div>
@@ -174,4 +228,3 @@ export default function DesignSystemEditor({ designSystem, onChange, onExport, o
     </div>
   );
 }
-

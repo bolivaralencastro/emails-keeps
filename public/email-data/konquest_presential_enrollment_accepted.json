@@ -11,7 +11,39 @@
   },
   "content": {
     "intro": "Sua inscrição na missão presencial \"{{missionName}}\" foi aceita!",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes do evento presencial",
+        "items": [
+          {
+            "icon": "event",
+            "label": "Evento",
+            "value": "Imersão em T&D da Keeps"
+          },
+          {
+            "icon": "location_on",
+            "label": "Local",
+            "value": "Keeps - SC-401, 4120 - Km4 - Saco Grande, Florianópolis - SC, 88032-005"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Data",
+            "value": "16/10/2025"
+          },
+          {
+            "icon": "schedule",
+            "label": "Horário",
+            "value": "12:00:00"
+          },
+          {
+            "icon": "group",
+            "label": "Vagas/Participantes",
+            "value": "70"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Ver Detalhes",
       "icon": "groups",

@@ -367,6 +367,12 @@ export const defaultDesignSystem = {
   
   // Logo
   logoUrl: '',
+
+  // Header
+  headerIconsEnabled: true,
+
+  // Suporte
+  useCustomSupportContacts: false,
   
   // Variáveis de conteúdo dinâmico
   variables: {
@@ -411,5 +417,9 @@ export const defaultDesignSystem = {
     app_web_link: 'https://app.exemplo.com',
     konquest_web_url: 'https://konquest.exemplo.com',
     konquest_certificate_web_url: '#',
+
+    // Suporte
+    supportEmail: 'suporte@keeps.com.br',
+    whatsappUrl: 'https://keeps.page.link/suporte-whats',
   }
 };

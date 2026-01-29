@@ -11,7 +11,24 @@
   },
   "content": {
     "intro": "Uma nova inscrição de {{userName}} na missão \"{{missionName}}\" está aguardando sua revisão.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes da matrícula",
+        "items": [
+          {
+            "icon": "person",
+            "label": "Usuário",
+            "value": "fabricio.ferreira@intercityhoteis.com.br"
+          },
+          {
+            "icon": "menu_book",
+            "label": "Curso",
+            "value": "Treinamento Boas Práticas com IA"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Revisar Inscrição",
       "icon": "arrow_forward",

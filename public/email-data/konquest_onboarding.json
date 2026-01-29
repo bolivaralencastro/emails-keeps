@@ -11,7 +11,24 @@
   },
   "content": {
     "intro": "Você está sendo convidado(a) para acessar a plataforma de aprendizagem da {{companyName}}! Com esse convite, você terá acesso a vários conteúdos e também poderá compartilhar seus conhecimentos e habilidades com outras pessoas.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Credenciais de acesso",
+        "items": [
+          {
+            "icon": "person",
+            "label": "Usuário",
+            "value": "adrianiperrella@gmail.com"
+          },
+          {
+            "icon": "key",
+            "label": "Senha",
+            "value": "60313954"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Começar Agora",
       "icon": "arrow_forward",

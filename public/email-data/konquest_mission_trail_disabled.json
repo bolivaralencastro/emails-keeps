@@ -11,7 +11,29 @@
   },
   "content": {
     "intro": "A trilha \"{{trailName}}\" foi desabilitada e não está mais disponível.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Trilha afetada",
+        "items": [
+          {
+            "icon": "route",
+            "label": "Trilha",
+            "value": "Educação Financeira"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Cursos inativos",
+        "items": [
+          {
+            "icon": "menu_book",
+            "text": "Administrando seu Dinheiro"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Ver Trilhas Disponíveis",
       "icon": "arrow_forward",

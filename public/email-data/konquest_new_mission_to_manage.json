@@ -11,7 +11,19 @@
   },
   "content": {
     "intro": "Uma nova missão \"{{missionName}}\" foi atribuída para você gerenciar.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Curso transferido",
+        "items": [
+          {
+            "icon": "menu_book",
+            "label": "Curso",
+            "value": "Integração de Dados na Plataforma Bionexo"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Gerenciar Missão",
       "icon": "arrow_forward",

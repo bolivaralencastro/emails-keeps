@@ -11,7 +11,24 @@
   },
   "content": {
     "intro": "Você está sendo convidado(a) para acessar a plataforma de aprendizagem da {{companyName}}! Com esse convite, você terá acesso a vários conteúdos e também poderá compartilhar seus conhecimentos e habilidades com outras pessoas.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Credenciais de acesso",
+        "items": [
+          {
+            "icon": "person",
+            "label": "Usuário",
+            "value": "nelson.cabuya@tivit.com"
+          },
+          {
+            "icon": "key",
+            "label": "Senha",
+            "value": "Utilize sua senha atual. Caso não lembre, clique no link para redefinir."
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Criar Minha Conta",
       "icon": "person_add",

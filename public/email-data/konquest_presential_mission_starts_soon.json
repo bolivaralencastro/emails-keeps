@@ -11,7 +11,34 @@
   },
   "content": {
     "intro": "A missão presencial \"{{missionName}}\" começa em {{startTime}}. Não se esqueça do local: {{location}}.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes do evento presencial",
+        "items": [
+          {
+            "icon": "event",
+            "label": "Evento",
+            "value": "Workshop: Redes Sociais & Marca Empregadora"
+          },
+          {
+            "icon": "location_on",
+            "label": "Local",
+            "value": "Intercity Aero POA"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Data",
+            "value": "21/01/2026"
+          },
+          {
+            "icon": "schedule",
+            "label": "Horário",
+            "value": "10:00:00"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Ver Detalhes",
       "icon": "groups",

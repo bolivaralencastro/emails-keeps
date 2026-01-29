@@ -11,7 +11,22 @@
   },
   "content": {
     "intro": "Você foi inscrito(a) em novas missões em grupo. Confira os detalhes abaixo e comece sua jornada de aprendizado.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "list",
+        "title": "Cursos e expiração",
+        "items": [
+          {
+            "icon": "menu_book",
+            "text": "A História do Grupo: COMVENE — Expira em 12/12/2059"
+          },
+          {
+            "icon": "menu_book",
+            "text": "Entendendo e lidando com a Ansiedade — Expira em 12/12/2059"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Acessar Missões",
       "icon": "arrow_forward",

@@ -11,7 +11,24 @@
   },
   "content": {
     "intro": "O desempenho mínimo exigido para a missão \"{{missionName}}\" foi atualizado. Verifique os novos requisitos.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes da missão",
+        "items": [
+          {
+            "icon": "menu_book",
+            "label": "Missão",
+            "value": "Lidera - Inteligência Emocional"
+          },
+          {
+            "icon": "flag",
+            "label": "Performance mínima",
+            "value": "70%"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Ver Requisitos",
       "icon": "arrow_forward",

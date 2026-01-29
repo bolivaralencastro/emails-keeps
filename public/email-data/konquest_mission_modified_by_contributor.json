@@ -11,7 +11,24 @@
   },
   "content": {
     "intro": "A missão \"{{missionName}}\" foi modificada por um contribuidor. Confira as atualizações.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes da alteração",
+        "items": [
+          {
+            "icon": "mail",
+            "label": "Email do contribuidor",
+            "value": "pamela.machado.silva@portoseguro.com.br"
+          },
+          {
+            "icon": "menu_book",
+            "label": "Curso",
+            "value": "Desentupimento"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Ver Alterações",
       "icon": "arrow_forward",

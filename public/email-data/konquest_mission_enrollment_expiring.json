@@ -11,7 +11,34 @@
   },
   "content": {
     "intro": "Sua inscrição na missão \"{{missionName}}\" está próxima de expirar. Complete as atividades antes do prazo.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes do curso",
+        "items": [
+          {
+            "icon": "menu_book",
+            "label": "Curso",
+            "value": "Trilha Inicial do Novo Corretor Associado - Locação"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Início em",
+            "value": "14/01/2026"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Expira em",
+            "value": "22/01/2026"
+          },
+          {
+            "icon": "schedule",
+            "label": "Status",
+            "value": "Expira hoje"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Acessar Missão",
       "icon": "arrow_forward",

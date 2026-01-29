@@ -11,7 +11,34 @@
   },
   "content": {
     "intro": "A missão live \"{{missionName}}\" começa em {{startTime}}. Não se esqueça!",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes do evento online",
+        "items": [
+          {
+            "icon": "videocam",
+            "label": "Evento",
+            "value": "evento matriculas usuarios"
+          },
+          {
+            "icon": "link",
+            "label": "Link",
+            "value": "click here (Google Meet)"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Data",
+            "value": "01/12/2025"
+          },
+          {
+            "icon": "schedule",
+            "label": "Horário",
+            "value": "16:00:00"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Acessar Missão",
       "icon": "videocam",

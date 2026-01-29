@@ -11,7 +11,24 @@
   },
   "content": {
     "intro": "Sua inscrição na missão live \"{{missionName}}\" foi aceita! Prepare-se para participar.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalhes do evento online",
+        "items": [
+          {
+            "icon": "videocam",
+            "label": "Evento",
+            "value": "Treinamento Agro negócios"
+          },
+          {
+            "icon": "link",
+            "label": "Link",
+            "value": "Liberado no dia do evento"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Ver Detalhes",
       "icon": "videocam",

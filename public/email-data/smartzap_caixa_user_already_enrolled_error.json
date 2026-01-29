@@ -11,7 +11,29 @@
   },
   "content": {
     "intro": "O usuário {{userName}} já está inscrito no SmartZap. Não é possível realizar nova inscrição.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Dados da matrícula",
+        "items": [
+          {
+            "icon": "domain",
+            "label": "ID workspace",
+            "value": "4576514f-6630-4847-ad6b-04923c0f8556"
+          },
+          {
+            "icon": "menu_book",
+            "label": "ID do curso",
+            "value": "74f201d5-1e1d-45af-b40d-73a5a698ebb9"
+          },
+          {
+            "icon": "person",
+            "label": "ID do usuário",
+            "value": "d983adec-eeed-4185-bd15-36e04f17208c"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Acessar SmartZap",
       "icon": "arrow_forward",

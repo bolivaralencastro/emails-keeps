@@ -3,34 +3,37 @@
   "name": "Relatório Gerado com Sucesso",
   "category": "analytics",
   "subject": "Seu relatório está pronto!",
-  
   "header": {
     "icon": "analytics",
     "iconSize": 48,
     "title": "Relatório Gerado com Sucesso",
     "subtitle": null
   },
-  
   "content": {
     "intro": "Seu relatório solicitado \"{{reportName}}\" foi gerado e está pronto para download.",
-    
     "sections": [
       {
         "type": "info-card",
+        "title": "Detalhes do relatório",
         "items": [
-          { "icon": "description", "label": "Nome do arquivo", "value": "{{fileName}}" },
-          { "icon": "calendar_today", "label": "Gerado em", "value": "{{generatedDate}}" },
-          { "icon": "person", "label": "Solicitado por", "value": "{{requesterName}}" }
+          {
+            "icon": "description",
+            "label": "Relatório",
+            "value": "konquest-users-export"
+          },
+          {
+            "icon": "check_circle",
+            "label": "Status",
+            "value": "Pronto para download"
+          }
         ]
       }
     ],
-    
     "cta": {
       "text": "Baixar Relatório",
       "icon": "download",
       "url": "{{downloadUrl}}"
     },
-    
     "footer": {
       "text": "Este link expira em 7 dias.",
       "hint": "Se você tiver problemas para baixar, entre em contato com o suporte."

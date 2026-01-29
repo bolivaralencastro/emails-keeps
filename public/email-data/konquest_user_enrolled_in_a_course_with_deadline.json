@@ -11,7 +11,34 @@
   },
   "content": {
     "intro": "Você foi inscrito(a) no curso \"{{courseName}}\". Complete até {{deadline}}.",
-    "sections": [],
+    "sections": [
+      {
+        "type": "info-card",
+        "title": "Detalles del curso",
+        "items": [
+          {
+            "icon": "menu_book",
+            "label": "Curso",
+            "value": "Onboarding institucional Colombia - Panama - México"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Empieza en",
+            "value": "22/01/2026"
+          },
+          {
+            "icon": "calendar_today",
+            "label": "Expira en",
+            "value": "27/02/2026"
+          },
+          {
+            "icon": "schedule",
+            "label": "Expira en",
+            "value": "36 dias"
+          }
+        ]
+      }
+    ],
     "cta": {
       "text": "Acessar Curso",
       "icon": "arrow_forward",
